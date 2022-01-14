@@ -15,13 +15,17 @@ import useForcast from '../../hooks/useForcast';
 
 const Page = () => {
 
-    const {error, isLoading, isForecast} = useForcast()
+    const {error, isLoading, isForecast, submitRequest} = useForcast()
+
+    const submitHandler = value => {
+        submitRequest({value})
+    }
 
     return (
         <Fragment>
             <Header />
             <div className={styles.box}>
-                {!isLoading && <Form/>}
+                {!isLoading && <Form submitSearch={submitHandler}/>}
                 {error && <Error message={error}/>}
                 {isLoading && <Loader/>}
             </div>
