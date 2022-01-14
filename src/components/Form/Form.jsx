@@ -9,7 +9,7 @@ const Form = () => {
     const submitHandler = event => {
         event.preventDefault();
 
-        if(location || location === '') return;
+        if(!location || location === '') return;
     }
 
     return (
