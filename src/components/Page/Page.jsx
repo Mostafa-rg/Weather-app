@@ -18,13 +18,13 @@ const Page = () => {
     const {error, isLoading, isForecast, submitRequest} = useForcast()
 
     const submitHandler = value => {
-        submitRequest({value})
+        submitRequest(value)
     }
 
     return (
         <Fragment>
             <Header />
-            <div className={styles.box}>
+            <div className={`${styles.box} position-relative`}>
                 {!isLoading && <Form submitSearch={submitHandler}/>}
                 {error && <Error message={error}/>}
                 {isLoading && <Loader/>}
