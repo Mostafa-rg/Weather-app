@@ -24,12 +24,13 @@ const Page = () => {
     return (
         <Fragment>
             <Header />
+            {!isForecast &&
             <div className={`${styles.box} position-relative`}>
                 {!isLoading && <Form submitSearch={submitHandler}/>}
                 {error && <Error message={error}/>}
                 {isLoading && <Loader/>}
-            </div>
-                {isForecast && <Forecast/>}
+            </div>}
+                {isForecast && <Forecast forecast={isForecast} />}
         </Fragment>
     );
 };

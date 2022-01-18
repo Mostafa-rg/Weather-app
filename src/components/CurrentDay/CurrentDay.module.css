@@ -28,6 +28,7 @@
     background-image: url('./assets/mountain.jpg');
     background-size: cover;
     border-radius: var(--main-border-radius);
+    
 }
 
 .weekday {
